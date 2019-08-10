@@ -283,7 +283,7 @@ class camocokb:
         output = {'object_name': params['gwas_name']}
         exit(output)
 
-        # END buildgwas
+        #END buildgwas
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
             raise ValueError('Method buildgwas return value ' +
