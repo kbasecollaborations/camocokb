@@ -1,0 +1,16 @@
+{
+   "name" : "buildgwas",
+   "short_description" : "Parse GWAS results into Camoco object",
+   "long_description" : "Provided a GWAS associations file and assembly data, create a camoco network entry for gwas results",
+   "tags" : {
+     "categories" : [],
+     "input": {
+       "file_types": ["txt"],
+       "kb_types": []
+     },
+     "output": {
+       "file_types": [],
+       "kb_types": []
+     }
+   }
+}

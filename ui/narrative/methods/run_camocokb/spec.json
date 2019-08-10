@@ -1,0 +1,126 @@
+{
+    "ver": "0.0.1",
+    "authors": [
+        "rmr"
+    ],
+    "contact": "",
+    "categories": ["active"],
+    "widgets": {
+        "input": null,
+        "output": null
+    },
+    "parameters": [ 
+        {
+          "id": "genome_ref",
+          "optional": false,
+          "advanced": false,
+          "allow_multiple": false,
+          "default_values": [ "" ],
+          "field_type": "text",
+          "text_options": {
+            "valid_ws_types": ["KBaseGenomes.Genome"]
+          }
+        },
+        {
+            "id": "association_ref",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": ["KBaseGenomes.Genome"]
+            }
+        },
+        {
+            "id": "exp_matrix_ref",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": ["KBaseMatrices.ExpressionMatrix"]
+            }
+        },
+        {
+            "id": "ontology",
+            "optional": false,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": ["KBaseOntology.OntologyDictionary"]
+            }
+        },
+        {
+            "id": "window_size",
+            "optional": true,
+            "advanced": true,
+            "allow_multiple": false,
+            "default_values": [ 1 ],
+            "field_type": "text",
+            "text_options": {
+                "validate_as": "int",
+                "min_integer" : 1
+            }
+        },
+        {
+            "id": "flank_limit",
+            "optional": true,
+            "advanced": true,
+            "allow_multiple": false,
+            "default_values": [ 1 ],
+            "field_type": "text",
+            "text_options": {
+                "validate_as": "int",
+                "min_integer" : 1
+            }
+        }
+    ],
+    "behavior": {
+        "service-mapping": {
+            "url": "",
+            "name": "camocokb",
+            "method": "run_camocokb",
+            "input_mapping": [
+               {
+                    "narrative_system_variable": "workspace",
+                    "target_property": "workspace_name"
+                },{
+                    "narrative_system_variable": "workspace_id",
+                    "target_property": "workspace_id"
+                },{
+                    "input_parameter": "genome_ref",
+                    "target_property": "genome_ref"
+                },{
+                    "input_parameter": "association_ref",
+                    "target_property": "association_ref"
+                },{
+                    "input_parameter": "exp_matrix_ref",
+                    "target_property": "exp_matrix_ref"
+                },{
+                    "input_parameter": "ontology",
+                    "target_property": "ontology"
+                },{
+                    "input_parameter": "window_size",
+                    "target_property": "window_size"
+                },{
+                    "input_parameter": "flank_limit",
+                    "target_property": "flank_limit"
+                }
+            ],
+            "output_mapping": [
+                {
+                    "service_method_output_path": [0,"report_name"],
+                    "target_property": "report_name"
+                },{
+                    "service_method_output_path": [0,"report_ref"],
+                    "target_property": "report_ref"
+                }
+            ]
+        }
+    },
+    "job_id_output_field": "docker"
+}

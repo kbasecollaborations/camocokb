@@ -1,0 +1,16 @@
+{
+   "name" : "overlap",
+   "short_description" : "Find GWAS and Co-expression network overlap",
+   "long_description" : "Using prioritized genes from a GWAS, find overlap between a coexpression network and GWAS to determine if GWAS genes are coexpressed",
+   "tags" : {
+     "categories" : ["coexpression", "gwas"],
+     "input": {
+       "file_types": [],
+       "kb_types": []
+     },
+     "output": {
+       "file_types": [],
+       "kb_types": []
+     }
+   }
+}

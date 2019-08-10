@@ -1,0 +1,70 @@
+#
+# define display information
+#
+name: Run Camocokb
+
+tooltip: |
+    Create a coexpression network and run queries against it with GWAS and GO terms.
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar apps that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            [app1, app2]
+        next:
+            [app3, app4]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    genome_ref :
+        ui-name : |
+            Genome
+        short-hint : |
+            The genome from which to build a coexpression network for
+        long-hint  : |
+            The genome from which to build a coexpression network for
+    association_ref :
+         ui-name : |
+             GWAS Association
+         short-hint : |
+             The GWAS results from which to build a coexpression network for
+         long-hint  : |
+             The GWAS results from which to build a coexpression network for
+    exp_matrix_ref :
+         ui-name : |
+             Expression matrix
+         short-hint : |
+             The trait value matrix from which to build a coexpression network for
+         long-hint  : |
+             The trait value matrix from which to build a coexpression network for
+    ontology :
+         ui-name : |
+             Ontology dictionary
+         short-hint : |
+             The ontology dictionary with which coexpression overlap can be run
+         long-hint  : |
+             The ontology dictionary with which can be used to find coexpression for.
+    window_size :
+         ui-name : |
+             Canidate window size
+         short-hint : |
+             The canidate window size for SNP to GENE mapping
+         long-hint  : |
+             Sliding window gene size for condensing down SNPs for running GWAS/Coexpression overlap. (default 1)
+    flank_limit :
+         ui-name : |
+             Canidate flank limit
+         short-hint : |
+             The number of flanking genes included in SNP to gene mapping.
+         long-hint  : |
+             The number of flanking genes included in SNP to gene mapping, on each side of the locus. (default 1)
+description : |
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar efficitur felis, quis tincidunt sem congue at. Vivamus ornare feugiat faucibus. Fusce tincidunt mattis nunc, nec varius purus convallis quis. Nulla facilisi. In at magna dolor. Suspendisse sit amet felis at arcu auctor dapibus vitae pharetra dui. Nam semper mi quis tortor fermentum mollis. Donec a arcu pharetra, rutrum dolor vitae, rutrum mauris. Donec ornare fringilla sagittis. Nam laoreet est in elementum malesuada. Vestibulum id mi eget urna hendrerit feugiat. Donec et ultrices nulla. Phasellus diam eros, dapibus at tempus nec, semper vel ante.</p>
+    <p>Curabitur auctor, metus at tristique euismod, odio elit tincidunt neque, a facilisis sem massa convallis dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc ut hendrerit tellus. Nunc lacinia laoreet finibus. Etiam vitae sagittis enim. Fusce consectetur porta est eu pretium. In hac habitasse platea dictumst. Integer pellentesque sit amet sapien id venenatis. Nullam ac risus at orci eleifend aliquet. Vestibulum elit purus, euismod a nibh quis, pellentesque semper leo. Curabitur ullamcorper felis hendrerit nunc egestas, sit amet pharetra sapien porttitor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas hendrerit ipsum a ligula aliquet vestibulum. Duis a ante urna. Aenean ante neque, rhoncus id luctus ut, accumsan vel nunc.</p>

@@ -1,0 +1,16 @@
+{
+   "name" : "buildontology",
+   "short_description" : "Parse Ontology dictionary into Camoco object",
+   "long_description" : "Provided a onotology dictionary and format dictionary build Camoco Ontology object",
+   "tags" : {
+     "categories" : [],
+     "input": {
+       "file_types": ["OBO"],
+       "kb_types": []
+     },
+     "output": {
+       "file_types": [],
+       "kb_types": []
+     }
+   }
+}
