@@ -98,7 +98,7 @@ module camocokb {
         returns (build_camoco_obj_out output) authentication required;
     funcdef buildontology(BuildOntologyInputParams params)
         returns (build_camoco_obj_out output) authentication required;
-    funcdef buildgwas(BuildGWASInputParams params)
+    funcdef buildgwasobj(BuildGWASInputParams params)
         returns (build_camoco_obj_out output) authentication required;
     funcdef overlapgwas(FindGWASCoexpOverlapParams params)
         returns (build_camoco_obj_out output) authentication required;
