@@ -80,8 +80,8 @@ class camocokbTest(unittest.TestCase):
             raise FileNotFoundError('RefGen reference data does not exist at: /data/ZmB73_5b_FGS.gff')
 
         # Expression data
-        if os.path.exists('/data/Hirsch2014_PANGenomeFPKM.txt'):
-            self.expr_file = '/data/Hirsch2014_PANGenomeFPKM.txt'
+        if os.path.exists('/data/Schaefer2018_ROOTFPKM.tsv'):
+            self.expr_file = '/data/Schaefer2018_ROOTFPKM.tsv'
         else:
             raise FileNotFoundError('Expression reference data does not exist at: /data/Hirsch2014_PANGenomeFPKM.txt')
 
@@ -129,7 +129,7 @@ class camocokbTest(unittest.TestCase):
 
         self.serviceImpl.buildcob(self.getContext(), cob_params)
 
-    def test_mk_ontology(self):
+    def mk_ontology(self):
         self.mk_cob()
 
         ontology_params = {
@@ -140,5 +140,19 @@ class camocokbTest(unittest.TestCase):
             'refgen_name': self.refgen_name
         }
 
-        self.serviceImpl.buildcob(self.getContext(), cob_params)
+        self.serviceImpl.buildontology(self.getContext(), ontology_params)
+
+    def test_mk_gwas(self):
+        self.mk_ontology()
+
+        gwas_params = {
+            'file_name': self.maize_gwas_file,
+            'gwas_name': 'ZmIonome',
+            'description': 'Maize Ionome GWAS',
+            'refgen_name': self.refgen_name
+        }
+
+        self.serviceImpl.buildgwas(self.getContext(), gwas_params)
+
+        os.system('camoco ls')
 

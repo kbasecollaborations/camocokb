@@ -71,7 +71,7 @@ module camocokb {
 
     typedef structure {
         string file_name;
-        camoco_obj_name obj_name;
+        string gwas_name;
         string description;
         camoco_obj_name refgen_name;
     } BuildGWASInputParams;

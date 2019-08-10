@@ -25,8 +25,8 @@ class camocokb:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-    GIT_URL = "https://github.com/kbasecollaborations/camocokb.git"
-    GIT_COMMIT_HASH = "28b543c36449c90dfc02bf4fd466cd994fddc9c4"
+    GIT_URL = ""
+    GIT_COMMIT_HASH = ""
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -176,7 +176,7 @@ class camocokb:
             if not os.path.exists(params['filename']):
                 raise FileNotFoundError(f"Input cob file {params['filename']} does not exist.")
         if 'refgen_name' not in params:
-            raise ValueError('No refgen name is given when creating COB')
+            raise ValueError('No name is given to create camoco RefGen')
         if 'description' not in params:
             params['description'] = 'Expression value matrix'
         if 'cob_name' not in params:
@@ -228,7 +228,7 @@ class camocokb:
         if 'description' not in params:
             params['description'] = 'Ontology terms'
         if 'refgen_name' not in params:
-            raise ValueError('No refgen object name is given when creating ontology object')
+            raise ValueError('No name is given to create camoco RefGen')
 
         onotology_cmd = ['camoco', 'build-go', params['filename'], params['base_onotology_path'],
                          params['ontology_name'], '"' + params['description'] + '"',
@@ -252,8 +252,9 @@ class camocokb:
     def buildgwas(self, ctx, params):
         """
         :param params: instance of type "BuildGWASInputParams" -> structure:
-           parameter "file_name" of String, parameter "gwas_name" of String,
-           parameter "description" of String, parameter "refgen_name" of type
+           parameter "file_name" of String, parameter "obj_name" of type
+           "camoco_obj_name" (Typdefs for camoco objects), parameter
+           "description" of String, parameter "refgen_name" of type
            "camoco_obj_name" (Typdefs for camoco objects)
         :returns: instance of type "build_camoco_obj_out" -> structure:
            parameter "object_name" of type "camoco_obj_name" (Typdefs for
@@ -262,26 +263,8 @@ class camocokb:
         # ctx is the context object
         # return variables are: output
         #BEGIN buildgwas
-        if 'filename' not in params:
-            raise ValueError('No cob file path is given to create camoco COB object from.')
-        else:
-            if not os.path.exists(params['filename']):
-                raise FileNotFoundError(f"Input ontology file {params['filename']} does not exist.")
-        if 'gwas_name' not in params:
-            raise ValueError('GWAS is not define for gwas object generation')
-        if 'description' not in params:
-            params['description'] = 'GWAS input'
-        if 'refgen_name' not in params:
-            raise ValueError('No name for the refgen object to use is given in gwas object creation')
-
-        gwas_cmd = ['camoco', 'build-gwas', params['filename'], params['gwas_name'], '"' + params['description'] + '"',
-                    params['refgen_name']]
-        gwas_proc = subprocess.Popen(gwas_cmd, stdout=subprocess.PIPE, close_fds=True)
-
-        gwas_out, err = gwas_proc.communicate()
-
-        output = {'object_name': params['gwas_name']}
-        exit(output)
+        pass
+        #END buildgwas
 
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
@@ -304,7 +287,6 @@ class camocokb:
         # return variables are: output
         #BEGIN overlapgwas
         pass
-        output = {}
         #END overlapgwas
 
         # At some point might do deeper type checking...

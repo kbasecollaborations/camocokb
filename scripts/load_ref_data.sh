@@ -7,7 +7,7 @@ cd /data
 RefGen=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/RefGen/ZmB73_5b_FGS.gff.gz
 RefGenfile=${RefGen##*/}
 
-Expr1=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/Expr/RNASEQ/Hirsch2014_PANGenomeFPKM.txt.gz
+Expr1=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/Expr/RNASEQ/Schaefer2018_ROOTFPKM.tsv.gz
 Expr1file=${Expr1##*/}
 
 GOBASE=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/GOnt/go.obo.gz
@@ -20,7 +20,7 @@ GWASZM=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/GWAS/SchaeferPla
 GWASZMfile=${GWASZM##*/}
 
 # Expr2=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/Expr/RNASEQ/Stelpflug2018_B73_Tissue_Atlas.txt.gz
-# Expr3=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/Expr/RNASEQ/Schaefer2018_ROOTFPKM.tsv.gz
+# Expr3=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/Expr/RNASEQ/Hirsch2014_PANGenomeFPKM.txt.gz
 # GWASZM2=https://github.com/LinkageIO/Camoco/raw/master/tests/raw/GWAS/WallacePLoSGenet/Wallace_etal_2014_PLoSGenet_GWAS_hits-150112.txt.gz
 
 # cURL this data, follow github redirects (-L), preserve filename (-O), keep silent (-s) and accept only gzip
@@ -38,7 +38,7 @@ curl -L -sH 'Accept-encoding: gzip' -O "${GWASZM}" && gunzip -f "${GWASZMfile}"
 
 if ( [ -f "ZmB73_5b_FGS.gff" ] \
 && [ -f "go.obo" ] \
-&& [ -f "Hirsch2014_PANGenomeFPKM.txt" ] \
+&& [ -f "Schaefer2018_ROOTFPKM.tsv" ] \
 && [ -f "zm_go.tsv" ] \
 && [ -f "ZmIonome.allLocs.csv" ] ); then
     touch __READY__
