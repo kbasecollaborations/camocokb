@@ -354,10 +354,10 @@ class Application(object):
                              name='camocokb.buildontology',
                              types=[dict])
         self.method_authentication['camocokb.buildontology'] = 'required'  # noqa
-        self.rpc_service.add(impl_camocokb.buildgwas,
-                             name='camocokb.buildgwas',
+        self.rpc_service.add(impl_camocokb.buildgwasobj,
+                             name='camocokb.buildgwasobj',
                              types=[dict])
-        self.method_authentication['camocokb.buildgwas'] = 'required'  # noqa
+        self.method_authentication['camocokb.buildgwasobj'] = 'required'  # noqa
         self.rpc_service.add(impl_camocokb.overlapgwas,
                              name='camocokb.overlapgwas',
                              types=[dict])

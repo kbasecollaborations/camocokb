@@ -146,13 +146,13 @@ class camocokbTest(unittest.TestCase):
         self.mk_ontology()
 
         gwas_params = {
-            'file_name': self.maize_gwas_file,
+            'filename': self.maize_gwas_file,
             'gwas_name': 'ZmIonome',
             'description': 'Maize Ionome GWAS',
             'refgen_name': self.refgen_name
         }
 
-        self.serviceImpl.buildgwas(self.getContext(), gwas_params)
+        self.serviceImpl.buildgwasobj(self.getContext(), gwas_params)
 
         os.system('camoco ls')
 
