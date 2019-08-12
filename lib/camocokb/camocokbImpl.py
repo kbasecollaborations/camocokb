@@ -274,7 +274,10 @@ class camocokb:
         if 'refgen_name' not in params:
             raise ValueError('No name for the refgen object to use is given in gwas object creation')
 
-        gwas_cmd = ['camoco', 'build-gwas', params['filename'], params['gwas_name'], '"' + params['description'] + '"',
+        # TODO: accept trait_col, chrom-col, and pos-col as input or standardize in
+        #   gwas file creation from KBASE object
+        gwas_cmd = ['camoco', 'build-gwas', '--sep ","', '--trait-col el',
+                    params['filename'], params['gwas_name'], '"' + params['description'] + '"',
                     params['refgen_name']]
         gwas_proc = subprocess.Popen(gwas_cmd, stdout=subprocess.PIPE, close_fds=True)
 
